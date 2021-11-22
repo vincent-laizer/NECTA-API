@@ -81,7 +81,7 @@ exam type can be **acsee** or **csee** (for now, more to be added)
     }
   ```
 
-  check out video tutorial on [YouTube](https://tanzaniaprogrammers.com/nectaapi) for demos.
+  check out video tutorial on [YouTube](https://www.youtube.com/channel/UCuMUw-djxHqOHrvnnFGYtZA) for demos.
 
 ---
 
