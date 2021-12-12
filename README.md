@@ -175,7 +175,7 @@ As one of my teachers said, **"Academics is one of the 3 areas in life where com
 
 ---
 
-  check out video tutorial on [YouTube](https://tanzaniaprogrammers.com/nectaapi) for demos.
+  check out video tutorial on [YouTube](https://www.youtube.com/channel/UCuMUw-djxHqOHrvnnFGYtZA) for demos.
 
 ---
 
