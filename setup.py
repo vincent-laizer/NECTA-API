@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
-import codecs
-import os
 
-VERSION = '1.0.0'
+VERSION = '2.0.0'
 DESCRIPTION = 'Fetch results of various national examinations done in Tanzania'
-LONG_DESCRIPTION = 'A get a dictionary of school sammury results, students results and list of all schools and their registration number that participated in national exams in a particular year'
+LONG_DESCRIPTION = ""
+with open('readme.md') as rm:
+    LONG_DESCRIPTION = rm.read()
 
 # Setting up
 setup(
@@ -12,6 +12,7 @@ setup(
     version=VERSION,
     author="Tanzania Programmers (Vincent Laizer)",
     author_email="<laizercorp@gmail.com>",
+    url="https://github.com/vincent-laizer/NECTA-API",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
