@@ -167,6 +167,10 @@ As one of my teachers said, **"Academics is one of the 3 areas in life where com
 ```
 
 ## What's New
+
+## Version 2.0.1
+- Compatibility with 2021 **CSEE** results format
+## Version 2.0.0
 - Bug fixes on the school summary function
 - proper handling of the year 2015 where GPA system was used.
     - note, in this year, distinction is counted as division one, merit as division two, credit as division three, pass as division four and fail as division zero.
