@@ -7,7 +7,7 @@ Current version is `Beta 2.0.0`
 
 This Version comes with a more modular structure compared to the previsious ones 
 
-Developed by [**Tanzania Programmers**](http://tanzaniaprogrammers.com/), written *by Vincent Laizer.*
+Developed by [**Tanzania Programmers**](https://www.youtube.com/channel/UCuMUw-djxHqOHrvnnFGYtZA), written *by Vincent Laizer.*
 ---
 
 ---
