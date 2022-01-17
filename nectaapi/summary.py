@@ -20,7 +20,7 @@ def summary(year, exam_type, school_number):
         # https://onlinesys.necta.go.tz/results/2021/acsee/results/s3881.htm  
     elif exam_type == "csee":
         if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results{year}/csee/index.htm"
+            url = f"https://matokeo.necta.go.tz/results2021/csee/results/{school_number}.htm"
         elif int(year) > 2014:
             url = f"https://onlinesys.necta.go.tz/results/{year}/{exam_type}/results/{school_number}.htm" 
             # f"http://127.0.0.1/necta/{year}/csee/s3881.php"

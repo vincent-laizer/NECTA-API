@@ -25,7 +25,7 @@ def schools(year, exam_type):
 
     if exam_type.lower() == "csee":
         if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results{year}/csee/csee.htm"
+            url = f"https://matokeo.necta.go.tz/results2021/csee/csee.htm"
         elif int(year) == 2016:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/index.htm" # f"http://127.0.0.1/necta/{year}/csee"
         else:
