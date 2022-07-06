@@ -25,8 +25,11 @@ def student(year, exam_type, school_number, student_number):
     index = 0
 
     if exam_type == "acsee":
-        url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
-        # http://127.0.0.1/necta/{year}/acsee/s3881.php
+        if year == 2022:
+            url = f"https://matokeo.necta.go.tz/acsee2022/results/{school_number}.htm"
+        else:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
+            # http://127.0.0.1/necta/{year}/acsee/s3881.php
         
         if school_number.startswith("p"):
             if year > 2019:

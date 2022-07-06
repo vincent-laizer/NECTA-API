@@ -35,7 +35,9 @@ def schools(year, exam_type):
             skip = 28
 
     elif exam_type.lower() == "acsee":
-        if int(year) > 2019:
+        if int(year) == 2022:
+            url = f"https://matokeo.necta.go.tz/acsee2022/index.htm"
+        elif int(year) > 2019:
             url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm" # f"http://127.0.0.1/necta/{year}/acsee"
         elif int(year) == 2014:
             url = f"https://onlinesys.necta.go.tz/results/2014/acsee/" # f"http://127.0.0.1/necta/{year}/acsee"

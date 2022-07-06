@@ -3,7 +3,7 @@ Get a formated data of examination results scrapped from necta results website.
 
 Note this is not an official [NECTA](https://necta.go.tz/) API and is still in development
 
-Current version is `Beta 2.0.3`
+Current version is `Beta 2.0.4`
 
 This Version comes with a more modular structure compared to the previsious ones 
 
@@ -168,6 +168,8 @@ As one of my teachers said, **"Academics is one of the 3 areas in life where com
 
 ## What's New
 
+## Version 2.0.4
+- Compatibility with 2022 **ACSEE** results format
 ## Version 2.0.3
 - Compatibility with 2021 **CSEE** results format
 ## Version 2.0.0
