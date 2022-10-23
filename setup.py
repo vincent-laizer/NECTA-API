@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '2.0.4'
+VERSION = '2.0.5'
 DESCRIPTION = 'Fetch results of various national examinations done in Tanzania'
 LONG_DESCRIPTION = ""
 with open('README.md') as rm:
