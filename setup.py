@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 VERSION = '2.0.4'
 DESCRIPTION = 'Fetch results of various national examinations done in Tanzania'
 LONG_DESCRIPTION = ""
-with open('readme.md') as rm:
+with open('README.md') as rm:
     LONG_DESCRIPTION = rm.read()
 
 # Setting up
