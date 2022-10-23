@@ -168,7 +168,7 @@ As one of my teachers said, **"Academics is one of the 3 areas in life where com
 
 ## What's New
 
-## Version 2.0.4
+## Version 2.0.5
 - Minor bug fixes
 
 ## Version 2.0.4
