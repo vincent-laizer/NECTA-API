@@ -16,6 +16,7 @@ import requests
 from bs4 import BeautifulSoup
 from nectaapi import summary
 from nectaapi.students import splitAfter
+from nectaapi.student_name import student_names
 
 def student(year, exam_type, school_number, student_number):
     url = ""
@@ -101,4 +102,12 @@ def student(year, exam_type, school_number, student_number):
         if not found:
             raise Exception(f"Wrong Examination Number {student_data['examination_number']}")
         else:
+            # get student names
+            names = student_names(student_number, school_number, year, exam_type)
+            if names != None:
+                student_data["firstname"] = names["firstname"]
+                student_data["middlename"] = names["middlename"]
+                student_data["lastname"] = names["lastname"]
+                student_data["sex"] = names["sex"]
+                
             return student_data
