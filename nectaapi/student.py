@@ -16,8 +16,19 @@ import requests
 from bs4 import BeautifulSoup
 from nectaapi import summary
 from nectaapi.students import splitAfter
+from typing import Dict,Any
 
-def student(year, exam_type, school_number, student_number):
+def student(year:int, exam_type:str, school_number:str, student_number:int)->Dict[str,Any]:
+    """Results of a single student
+
+    Args:
+        year(int), exam_type(str), school_number(str), student_number(int)
+    
+    Returns:
+        Dict
+    
+    """
+    
     url = ""
     exam_type = exam_type.lower()
     school_number = school_number.lower()

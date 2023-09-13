@@ -9,7 +9,22 @@ division_zero, national_position, regional_position, total_national_schools, tot
 import requests
 from bs4 import BeautifulSoup
 
-def summary(year, exam_type, school_number):
+def summary(year:int, exam_type:str, school_number:str):
+
+    """Summary of a school's performance
+    
+    Args:
+        year(int), exam_type(str), school_number(str)
+    
+    Returns:
+        Dict
+
+    returns a dictionary with these keys and their values
+    school_name, school_number, exam_type, year_of_exam, school_category, number_of_students, school_region,
+    male_students, female_students, absentees, division_one, division_two, division_three, division_four,
+    division_zero, national_position, regional_position, total_national_schools, total_regional_schools, gpa
+    """
+    
     url = ""
     exam_type = exam_type.lower()
     school_number = school_number.lower()
