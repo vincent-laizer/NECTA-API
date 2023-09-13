@@ -16,8 +16,18 @@ example: {
 '''
 from bs4 import BeautifulSoup
 import requests
+from typing import Dict,Any
 
-def schools(year, exam_type):
+def schools(year:int, exam_type:str)->Dict[str,Any]:
+    """Gets all schools and their registration numbers in a given year and exam type
+
+    Args:
+        year(int),exam_type(str)
+    
+    Returns:
+        Dict
+    """
+    
     url = ""
 
     # the number of waste rows to skip (letters in the home page), if available
