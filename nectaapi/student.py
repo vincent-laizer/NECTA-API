@@ -18,7 +18,7 @@ from nectaapi import summary
 from nectaapi.students import splitAfter
 from typing import Dict,Any
 
-def student(year:int, exam_type:str, school_number:str, student_number:int)->Dict[str,Any]:
+def student(year:int, exam_type:str, school_number:str, student_number:str)->Dict[str,Any]:
     """Results of a single student
 
     Args:
@@ -36,11 +36,10 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
     index = 0
 
     if exam_type == "acsee":
-        if year == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/results/{school_number}.htm"
+        if year == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/acsee/results/{school_number}.htm"
         else:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/acsee/s3881.php
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm"
         
         if school_number.startswith("p"):
             if year > 2019:
@@ -54,14 +53,10 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
                 index = 0
 
     elif exam_type == "csee":
-        if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results/2021/csee/results/{school_number}.htm"
-        elif int(year) > 2014:
+        if year > 2014:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/csee/s3881.php
         else:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/csee/s3881.php
 
         if school_number.startswith("p"):
             if year > 2018:
@@ -96,6 +91,8 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
         found = False
 
         studentsTable = soup.find_all("table")[index]
+        # print(studentsTable)
+
         for tr in studentsTable.find_all("tr"):
             row = []
             for td in tr.find_all("td"):
@@ -108,6 +105,7 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
                 student_data["points"] = row[2]
                 student_data["subjects"] = splitAfter(row[4])
                 found = True
+        # print(student_data)
 
         if not found:
             raise Exception(f"Wrong Examination Number {student_data['examination_number']}")
