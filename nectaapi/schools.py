@@ -32,29 +32,31 @@ def schools(year:int, exam_type:str)->Dict[str,Any]:
 
     # the number of waste rows to skip (letters in the home page), if available
     skip = 0
+    year=int(year)
+    exam_type = exam_type.lower()
 
-    if exam_type.lower() == "csee":
-        if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results/2021/csee/csee.htm"
-        elif int(year) == 2016:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/csee/index.htm" # f"http://127.0.0.1/necta/{year}/csee"
+    if exam_type == "csee":
+        if year==2022:
+            url="https://onlinesys.necta.go.tz/results/2022/csee/index.htm"
+        elif year == 2016:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/csee/index.htm" 
         else:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/csee/csee.htm" # f"http://127.0.0.1/necta/{year}/csee"
+            url = f"https://onlinesys.necta.go.tz/results/{year}/csee/csee.htm" 
 
-        if int(year) > 2014:
+        if year > 2014:
             skip = 28
 
-    elif exam_type.lower() == "acsee":
-        if int(year) == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/index.htm"
-        elif int(year) > 2019:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm" # f"http://127.0.0.1/necta/{year}/acsee"
-        elif int(year) == 2014:
-            url = f"https://onlinesys.necta.go.tz/results/2014/acsee/" # f"http://127.0.0.1/necta/{year}/acsee"
+    elif exam_type == "acsee":
+        if year == 2023:
+            url="https://matokeo.necta.go.tz/results/2023/acsee/index.htm"
+        elif year > 2019:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm" 
+        elif year == 2014:
+            url = f"https://onlinesys.necta.go.tz/results/2014/acsee/" 
         else:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/acsee.htm" # f"http://127.0.0.1/necta/{year}/acsee"
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/acsee.htm" 
 
-        if int(year) > 2015:
+        if year > 2015:
             skip = 27
     else:
         # invalid exam type

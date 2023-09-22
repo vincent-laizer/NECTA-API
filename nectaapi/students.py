@@ -38,11 +38,10 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
     index = 0
 
     if exam_type == "acsee":
-        if year == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/results/{school_number}.htm"
+        if year == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/acsee/results/{school_number}.htm"
         else:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/acsee/s3881.php
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm"
         
         if school_number.startswith("p"):
             if year > 2019:
@@ -56,14 +55,10 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
                 index = 0
 
     elif exam_type == "csee":
-        if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results/2021/csee/results/p0101.htm"
-        elif int(year) > 2014:
+        if int(year) > 2014:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/csee/s3881.php
         else:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/csee/s3881.php
 
         if school_number.startswith("p"):
             if year > 2018:
