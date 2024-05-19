@@ -100,8 +100,8 @@ def summary(year:int, exam_type:str, school_number:str):
             summary = handleCenter(summary, soup)
         else:
             # handle a school
-            if year != 2015:
-                # 2015 has no bottom performance analysis table
+            if year != 2015 or exam_type == "acsee":
+                # 2015 has no bottom performance analysis table in csee
                 summary = handleSchool(summary, soup)
     else:
         # failed to fetch data, raise exception
