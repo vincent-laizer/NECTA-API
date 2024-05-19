@@ -134,7 +134,7 @@ def handleCenter(summary, soup):
     exam_type = summary["exam_type"].lower()
 
     if exam_type == "acsee":
-        if year >= 2019:
+        if year > 2019:
             # has top summary table, scrap the data
             summary = scrapManual(soup, summary, 2) # just for absentees
             summary = set_zero(summary)

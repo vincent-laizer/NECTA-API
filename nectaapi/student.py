@@ -37,19 +37,18 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
     index = 0
 
     if exam_type == "acsee":
-        if year == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/results/{school_number}.htm"
+        if year == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/acsee/results/{school_number}.htm"
         else:
             url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/acsee/s3881.php
         
         if school_number.startswith("p"):
             if year > 2019:
-                index = 1
+                index = 2
             else:
                 index = 0
         else:
-            if year > 2019:
+            if year >= 2019:
                 index = 2
             else:
                 index = 0
@@ -105,6 +104,7 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
                 row.append(td.text.strip('\n'))
 
             # search for student number
+            print(row)
             if row[0] == student_data["examination_number"]:
                 student_data["gender"] = row[1]
                 student_data["division"] = row[3]
