@@ -46,7 +46,7 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
         
         if school_number.startswith("p"):
             if year > 2019:
-                index = 1
+                index = 2
             else:
                 index = 0
         else:
@@ -56,8 +56,10 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
                 index = 0
 
     elif exam_type == "csee":
-        if int(year) == 2021:
-            url = f"https://onlinesys.necta.go.tz/results/2021/csee/results/p0101.htm"
+        if int(year) == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/csee/CSEE2023/results/{school_number}.htm"
+        elif int(year) > 2018:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/csee/results/{school_number}.htm"
         elif int(year) > 2014:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/results/{school_number}.htm" 
             # http://127.0.0.1/necta/{year}/csee/s3881.php
@@ -67,7 +69,7 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
 
         if school_number.startswith("p"):
             if year > 2018:
-                index = 1
+                index = 2
             else:
                 index = 0
         else:
@@ -75,7 +77,7 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
                 index = 2
             else:
                 index = 0
-
+    
     data = requests.get(url)
     soup = BeautifulSoup(data.text, 'html.parser')
 
