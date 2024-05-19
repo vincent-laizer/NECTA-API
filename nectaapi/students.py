@@ -20,8 +20,17 @@ school_name, school_number, number_of_students, year_of_exam, exam_type, student
 import requests
 from bs4 import BeautifulSoup
 from nectaapi import summary
+from typing import Dict,Any,List
 
-def students(year, exam_type, school_number):
+def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
+    """Get all students with their performance in a particular school or center
+
+    Args:
+        year(int),exam_type(str), school_number(str)
+    
+    Returns:
+        Dict
+    """
     url = ""
     exam_type = exam_type.lower()
     school_number = school_number.lower()
@@ -74,14 +83,14 @@ def students(year, exam_type, school_number):
         raise Exception(f"failed to connect to server\nError code {data.status_code}")
     else:
         # get some data from summary function
-        s = summary.summary(year, exam_type, school_number)
+        school_summary = summary.summary(year, exam_type, school_number)
 
         students = {
             "school_number":school_number,
-            "school_name":s["school_name"],
+            "school_name":school_summary["school_name"],
             "year_of_exam":year,
             "exam_type":exam_type,
-            "number_of_students":s["number_of_students"],
+            "number_of_students":school_summary["number_of_students"],
             "students":[]
         }
 
@@ -90,7 +99,7 @@ def students(year, exam_type, school_number):
 
         return students
 
-def scrapStudents(soup, index):
+def scrapStudents(soup, index)->List[Dict[str,Any]]:
     studentsTable = soup.find_all("table")[index]
     data = []
 
@@ -116,7 +125,7 @@ def scrapStudents(soup, index):
     return data
 
 # assisting function in obtaining a dictionary of candidates subjects and grades
-def splitAfter(text):
+def splitAfter(text)->Dict[str,str]:
     subjects = {} # a dictionary of subject grade pair
     values = []
     temp = ""
