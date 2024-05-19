@@ -38,7 +38,7 @@ def summary(year:int, exam_type:str, school_number:str):
             # https://onlinesys.necta.go.tz/results/2021/acsee/results/s3881.htm  
     elif exam_type == "csee":
         if int(year) == 2023:
-            url = f"https://matokeo.necta.go.tz/results/2023/csee/CSEE2023/results/p0101.htm"
+            url = f"https://matokeo.necta.go.tz/results/2023/csee/CSEE2023/results/{school_number}.htm"
         elif int(year) == 2021:
             url = f"https://onlinesys.necta.go.tz/results/2021/csee/results/{school_number}.htm"
         elif int(year) > 2014:
@@ -101,7 +101,9 @@ def summary(year:int, exam_type:str, school_number:str):
             summary = handleCenter(summary, soup)
         else:
             # handle a school
-            summary = handleSchool(summary, soup)
+            if year != 2015:
+                # 2015 has no bottom performance analysis table
+                summary = handleSchool(summary, soup)
     else:
         # failed to fetch data, raise exception
         raise Exception(f"Failed to access {url}\nResponse Code {data.status_code}")
