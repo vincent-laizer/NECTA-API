@@ -45,17 +45,19 @@ def schools(year:int, exam_type:str)->Dict[str,Any]:
             skip = 28
 
     elif exam_type.lower() == "acsee":
-        if int(year) == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/index.htm"
-        elif int(year) > 2019:
-            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm" # f"http://127.0.0.1/necta/{year}/acsee"
+        if int(year) == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/acsee/index.htm"
+        elif int(year) <= 2022 and int(year) >= 2020:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm"
+        elif int(year) <= 2019 and int(year) >= 2016:
+            url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/acsee.htm"
         elif int(year) == 2014:
             url = f"https://onlinesys.necta.go.tz/results/2014/acsee/" # f"http://127.0.0.1/necta/{year}/acsee"
         else:
             url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/acsee.htm" # f"http://127.0.0.1/necta/{year}/acsee"
 
         if int(year) > 2015:
-            skip = 27
+            skip = 28
     else:
         # invalid exam type
         raise Exception(f"Invalid Exam Type {exam_type}")
