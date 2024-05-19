@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '2.0.5'
+VERSION = '2.0.6'
 DESCRIPTION = 'Fetch results of various national examinations done in Tanzania'
 LONG_DESCRIPTION = ""
 with open('README.md') as rm:
@@ -17,7 +17,10 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=[],
+    install_requires=[
+        'requests',
+        'beautifulsoup4'
+    ],
     keywords=['python', 'necta', 'api', 'necta api', 'necta tanzania', 'tanzania programmers'],
     classifiers=[
         "Development Status :: 4 - Beta",
