@@ -38,19 +38,18 @@ def students(year:int, exam_type:str, school_number:str)->Dict[str,Any]:
     index = 0
 
     if exam_type == "acsee":
-        if year == 2022:
-            url = f"https://matokeo.necta.go.tz/acsee2022/results/{school_number}.htm"
+        if year == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/acsee/results/{school_number}.htm"
         else:
             url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/results/{school_number}.htm" 
-            # http://127.0.0.1/necta/{year}/acsee/s3881.php
         
         if school_number.startswith("p"):
-            if year > 2019:
+            if year >= 2019:
                 index = 2
             else:
                 index = 0
         else:
-            if year > 2019:
+            if year >= 2019:
                 index = 2
             else:
                 index = 0
