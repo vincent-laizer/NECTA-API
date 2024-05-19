@@ -55,7 +55,9 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
                 index = 0
 
     elif exam_type == "csee":
-        if int(year) == 2021:
+        if int(year) == 2023:
+            url = f"https://matokeo.necta.go.tz/results/2023/csee/CSEE2023/results/{school_number}.htm"
+        elif int(year) == 2021:
             url = f"https://onlinesys.necta.go.tz/results/2021/csee/results/{school_number}.htm"
         elif int(year) > 2014:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/results/{school_number}.htm" 
@@ -66,7 +68,7 @@ def student(year:int, exam_type:str, school_number:str, student_number:int)->Dic
 
         if school_number.startswith("p"):
             if year > 2018:
-                index = 1
+                index = 2
             else:
                 index = 0
         else:
