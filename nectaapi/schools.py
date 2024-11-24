@@ -35,7 +35,7 @@ def schools(year:int, exam_type:str)->Dict[str,Any]:
 
     if exam_type.lower() == "csee":
         if int(year) == 2023:
-            url = f"https://matokeo.necta.go.tz/results/2023/csee/CSEE 2023.htm"
+            url = f"https://onlinesys.necta.go.tz/results/2023/csee/index.htm"
         elif int(year) == 2016 or int(year) == 2022:
             url = f"https://onlinesys.necta.go.tz/results/{year}/csee/index.htm" # f"http://127.0.0.1/necta/{year}/csee"
         else:
@@ -46,7 +46,7 @@ def schools(year:int, exam_type:str)->Dict[str,Any]:
 
     elif exam_type.lower() == "acsee":
         if int(year) == 2023:
-            url = f"https://matokeo.necta.go.tz/results/2023/acsee/index.htm"
+            url = f"https://onlinesys.necta.go.tz/results/2023/acsee/index.htm"
         elif int(year) <= 2022 and int(year) >= 2020:
             url = f"https://onlinesys.necta.go.tz/results/{year}/acsee/index.htm"
         elif int(year) <= 2019 and int(year) >= 2016:
